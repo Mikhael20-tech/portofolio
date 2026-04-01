@@ -13,6 +13,7 @@ declare global {
     interface IntrinsicElements {
       meshLineGeometry: any;
       meshLineMaterial: any;
+      meshLine: any;
     }
   }
 }
