@@ -113,7 +113,8 @@ export default function Home() {
               </p>
             </motion.div>
             
-            <div className="col-span-1 md:col-span-5 h-[450px] md:h-[750px] flex items-center justify-center order-1 md:order-2 cursor-grab active:cursor-grabbing drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+            {/* LANYARD CONTAINER DIUBAH DI SINI */}
+            <div className="col-span-1 md:col-span-5 h-[250px] sm:h-[350px] md:h-[750px] flex items-center justify-center order-1 md:order-2 cursor-grab active:cursor-grabbing drop-shadow-[0_0_30px_rgba(255,255,255,0.1)] transform scale-75 sm:scale-90 md:scale-100 origin-center mb-8 md:mb-0">
                <Lanyard position={[0, 0, 15]} gravity={[0, -45, 0]} />
             </div>
           </div>
