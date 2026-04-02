@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google"; // Tambahkan Playfair_Display
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import SmoothScroll from "@/components/SmoothScroll"; // 1. Import komponen Lenis
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,11 +27,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      /* Tambahkan playfair.variable di sini */
-      className={`${geistSans.variable} ${playfair.variable} h-full antialiased scroll-smooth`}
+      /* 2. Hapus scroll-smooth dari sini agar tidak bentrok dengan Lenis */
+      className={`${geistSans.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#050505] selection:bg-[#c4a484] selection:text-white">
-        {children}
+        
+        {/* 3. Bungkus seluruh isi web dengan SmoothScroll */}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+
       </body>
     </html>
   );
