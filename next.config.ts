@@ -1,19 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* Konfigurasi agar Netlify tidak berhenti saat ada error TypeScript/Lint */
+  /* Konfigurasi agar Netlify tidak berhenti saat ada error TypeScript.
+     Catatan: ESLint kini diatur via CLI atau environment variable 
+     untuk Next.js terbaru.
+  */
   typescript: {
     // Membolehkan produksi build selesai meskipun ada type errors
     ignoreBuildErrors: true,
   },
-  eslint: {
-    // Mengabaikan pengecekan eslint saat build agar lebih cepat
-    ignoreDuringBuilds: true,
-  },
-  // Jika kamu menggunakan image optimization dari Next.js (seperti di Lanyard)
+
+  // Konfigurasi Image Optimization (Penting untuk Lanyard & Badge)
   images: {
-    unoptimized: true, // Opsional: membantu jika ada masalah render gambar di Netlify
+    unoptimized: true, 
   },
+
+  // Opsi tambahan untuk performa (Opsional)
+  reactStrictMode: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;
